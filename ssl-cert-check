@@ -282,7 +282,7 @@ ADMIN="root"
 SENDER=""
 
 # Number of days in the warning threshhold (cmdline: -x)
-WARNDAYS=30
+WARNDAYS=45
 
 # If QUIET is set to TRUE, don't print anything on the console (cmdline: -q)
 QUIET="FALSE"
