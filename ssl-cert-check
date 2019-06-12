@@ -303,7 +303,7 @@ PKCSDBPASSWD=""
 CERTTYPE="pem"
 
 # Protocol version to use (cmdline: -v)
-VERSION="-tls1_1"
+VERSION="-tls1_2"
 
 # Location of system binaries
 AWK=$(command -v awk)
