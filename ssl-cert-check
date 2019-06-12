@@ -49,7 +49,7 @@ PROGRAMVERSION=4.11
 #  - Fixed a typo in the program version
 #
 # Version 4.2
-#  - Change CERTDAYS to CERTDIFF in the e-mail subject. 
+#  - Change CERTDAYS to CERTDIFF in the e-mail subject.
 #
 # Version 4.1
 #  - Fix usage output
@@ -58,7 +58,7 @@ PROGRAMVERSION=4.11
 #  - Updated the script syntax to align with UNIX shell programming
 #  - Check for DNS resolution failures
 #  - First round of updates to make shellcheck happy
-#  - Rework the logic to call mailx. 
+#  - Rework the logic to call mailx.
 #  - Print the version with the "-V" option.
 #  - Define the version in the PROGRAMVERSION variable
 #
@@ -333,7 +333,7 @@ elif [ -f /usr/sbin/mail ]; then
     MAILMODE="mail"
 elif [ -f /usr/sbin/sendmail ]; then
     MAIL="/usr/sbin/sendmail"
-    MAILMODE="sendmail"    
+    MAILMODE="sendmail"
 else
     MAIL="cantfindit"
     MAILMODE="cantfindit"
@@ -727,7 +727,7 @@ check_file_status() {
 
         # Extract the issuer from the certificate
         CERTISSUER=$("${OPENSSL}" x509 -in "${CERT_TMP}" -issuer -noout | \
-                     "${AWK}" 'BEGIN {RS="/" } $0 ~ /^O=/ 
+                     "${AWK}" 'BEGIN {RS="/" } $0 ~ /^O=/
                                  { print substr($0,3,17)}')
 
         ### Grab the common name (CN) from the X.509 certificate
