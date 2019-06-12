@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 PROGRAMVERSION=4.11
 #
 # Program: SSL Certificate Check <ssl-cert-check>
