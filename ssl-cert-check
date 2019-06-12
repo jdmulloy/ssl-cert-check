@@ -659,13 +659,15 @@ check_server_status() {
         TLSFLAG=""
     fi
 
-    if [ "${TLSSERVERNAME}" = "FALSE" ]; then
-	TLSFLAG=(s_client -crlf -connect "${1}":"${2}")
-    else
-        TLSFLAG=(s_client -crlf -connect "${1}":"${2}" -servername "${1}")
+    if [ "${VERSION}" != "" ]; then
+        VER="-${VERSION}"
     fi
 
-    echo "" | "${OPENSSL}" "${TLSFLAG[@]}" 2> "${ERROR_TMP}" 1> "${CERT_TMP}"
+    if [ "${TLSSERVERNAME}" = "TRUE" ]; then
+         TLSFLAG="${TLSFLAG} -servername $1"
+     fi
+
+    echo "" | "${OPENSSL}" s_client -crlf ${VER} -connect ${1}:${2} ${TLSFLAG} 2> "${ERROR_TMP}" 1> "${CERT_TMP}"
 
     if "${GREP}" -i "Connection refused" "${ERROR_TMP}" > /dev/null; then
         prints "${1}" "${2}" "Connection refused" "Unknown"
