@@ -81,7 +81,7 @@ PROGRAMVERSION=4.14
 #  - Add a "-N" option to create summarized Nagios output -- Marcel Pennewiss
 #  - Cleaned up many formatting -- Marcel Pennewiss
 #
-# Versione 3.29a
+# Version 3.29a
 #  - Added option to specify email sender address
 #
 # Version 3.29
